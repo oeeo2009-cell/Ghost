@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+here<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
@@ -9,12 +9,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- عناصر متحركة في الخلفية -->
+    <!-- عناصر متحركة في الخلفية - حركات أقوى -->
     <div class="floating-l">L</div>
     <div class="floating-kira">KIRA</div>
     <div class="floating-skull">☠</div>
     <div class="floating-apple">🍎</div>
     <div class="floating-note">DEATH NOTE</div>
+    <div class="floating-light">LIGHT</div>
+    <div class="floating-ryuk">RYUK</div>
 
     <!-- شريط القناة المجانية -->
     <div class="telegram-bar">
@@ -45,7 +47,7 @@
         <div class="hero-content">
             <div class="animated-title">
                 <span class="l-letter">L</span>
-                <span class="vs">vs</span>
+                <span class="vs">VS</span>
                 <span class="kira-letter">KIRA</span>
             </div>
             <h1>مُذَكِّرَة <span>الموت</span></h1>
@@ -86,21 +88,27 @@
         </div>
     </section>
 
-    <!-- القسم المدفوع -->
+    <!-- القسم المدفوع - عدلت هنا -->
     <section id="paid" class="paid-section">
         <h2 class="section-title"><span class="white-text">⚡</span> المحتوى المدفوع <span class="white-text">⚡</span></h2>
         
-        <!-- نافذة إدخال الكود -->
+        <!-- نافذة إدخال الكود - معدلة بشكل كامل -->
         <div id="code-entry" class="code-container">
             <div class="code-box">
                 <div class="lock-icon">
                     <i class="fas fa-lock"></i>
                 </div>
                 <h3>🔐 أدخل كود الدخول</h3>
-                <p>إذا اشتريت الأداة، راح تستلم كود مني</p>
-                <input type="text" id="access-code" class="code-input" placeholder="مثال: GHOST-XXX-000" autocomplete="off">
+                <p>إذا اشتريت الأداة، راح تستلم كود فريد مني</p>
+                <div class="code-input-wrapper">
+                    <input type="text" id="access-code" class="code-input" placeholder="مثال: GHOST-XXX-000" autocomplete="off">
+                    <i class="fas fa-key input-icon"></i>
+                </div>
                 <button onclick="checkCode()" class="code-btn">دخول</button>
-                <p class="code-note">ما عندك كود؟ <a href="#" onclick="openTelegram(event)" class="buy-link">راسلني عالتيليجرام</a></p>
+                <div class="code-help">
+                    <p>ما عندك كود؟ <a href="#" onclick="openTelegram(event)" class="buy-link">راسلني عالتيليجرام</a></p>
+                    <p class="code-note">* الكود يشتغل لجهاز واحد فقط</p>
+                </div>
             </div>
         </div>
 
@@ -207,4 +215,4 @@
 
     <script src="script.js"></script>
 </body>
-</html>
+    </html>
