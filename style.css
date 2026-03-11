@@ -33,6 +33,76 @@ body::before {
     --death-dark: #1a1a1a;
     --death-text: #f0f0f0;
     --death-shadow: #330000;
+    --l-white: #ffffff;
+    --l-shadow: #cccccc;
+}
+
+/* عناصر L في الخلفية */
+.l-left {
+    position: fixed;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: 'Orbitron', sans-serif;
+    font-size: 120px;
+    font-weight: 900;
+    color: rgba(139, 0, 0, 0.1);
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.l-right {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: 'Orbitron', sans-serif;
+    font-size: 120px;
+    font-weight: 900;
+    color: rgba(139, 0, 0, 0.1);
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.l-corner {
+    position: fixed;
+    width: 100px;
+    height: 100px;
+    border: 3px solid var(--death-red);
+    opacity: 0.3;
+    z-index: -1;
+}
+
+.l-corner.tl {
+    top: 20px;
+    left: 20px;
+    border-right: none;
+    border-bottom: none;
+}
+
+.l-corner.tr {
+    top: 20px;
+    right: 20px;
+    border-left: none;
+    border-bottom: none;
+}
+
+.l-corner.bl {
+    bottom: 20px;
+    left: 20px;
+    border-right: none;
+    border-top: none;
+}
+
+.l-corner.br {
+    bottom: 20px;
+    right: 20px;
+    border-left: none;
+    border-top: none;
 }
 
 .telegram-bar {
@@ -55,12 +125,6 @@ body::before {
     color: var(--death-red);
     opacity: 0.5;
     animation: skullMove 3s infinite;
-}
-
-@keyframes skullMove {
-    0% { left: 10px; }
-    50% { left: 20px; }
-    100% { left: 10px; }
 }
 
 .telegram-bar i {
@@ -112,6 +176,7 @@ nav {
     font-size: 12px;
     color: #666;
     letter-spacing: 2px;
+    font-family: 'Orbitron', sans-serif;
 }
 
 .nav-links {
@@ -178,6 +243,24 @@ section {
     position: relative;
 }
 
+.l-badge {
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    width: 60px;
+    height: 60px;
+    background: var(--death-red);
+    color: #fff;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 30px;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: 0 0 20px var(--death-red);
+}
+
 .hero-content::before {
     content: '☠';
     position: absolute;
@@ -213,6 +296,16 @@ section {
     font-size: 20px;
     color: #aaa;
     margin-bottom: 30px;
+}
+
+.l-quote {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 16px;
+    color: #fff;
+    background: rgba(139, 0, 0, 0.2);
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
 }
 
 .apple-divider {
@@ -288,6 +381,11 @@ section {
     font-size: 18px;
 }
 
+.l-desc {
+    font-family: 'Orbitron', sans-serif;
+    color: #fff;
+}
+
 .channel-card {
     max-width: 600px;
     margin: 0 auto;
@@ -298,6 +396,16 @@ section {
     text-align: center;
     position: relative;
     overflow: hidden;
+}
+
+.l-mini {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 40px;
+    font-weight: 900;
+    color: rgba(139, 0, 0, 0.1);
 }
 
 .channel-card::before {
@@ -388,17 +496,98 @@ section {
     position: relative;
 }
 
-.death-note-quote {
+/* نافذة الدخول */
+.login-container {
+    max-width: 400px;
+    margin: 0 auto 50px;
+}
+
+.login-box {
+    background: rgba(20, 20, 20, 0.95);
+    border: 2px solid var(--death-red);
+    border-radius: 10px;
+    padding: 40px;
     text-align: center;
-    font-size: 20px;
+    position: relative;
+    box-shadow: 0 0 30px rgba(139, 0, 0, 0.3);
+}
+
+.l-big {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 60px;
+    font-weight: 900;
+    color: var(--death-red);
+    margin-bottom: 20px;
+    text-shadow: 0 0 20px red;
+}
+
+.login-box h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.login-box p {
+    color: #ccc;
+    margin-bottom: 20px;
+}
+
+.code-input {
+    width: 100%;
+    padding: 15px;
+    background: #000;
+    border: 2px solid #333;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 20px;
+    direction: ltr;
+}
+
+.code-input:focus {
+    border-color: var(--death-red);
+    outline: none;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(45deg, #000, var(--death-red));
+    color: #fff;
+    border: 1px solid var(--death-red);
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.login-btn:hover {
+    background: linear-gradient(45deg, var(--death-red), #000);
+    box-shadow: 0 0 20px var(--death-red);
+}
+
+.login-note {
+    margin-top: 20px;
+    font-size: 12px;
     color: #666;
-    margin: 40px 0;
-    font-style: italic;
-    border-left: 3px solid var(--death-red);
-    border-right: 3px solid var(--death-red);
-    padding: 20px;
-    max-width: 800px;
-    margin: 40px auto;
+}
+
+/* الأدوات المدفوعة */
+.l-reveal {
+    text-align: center;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 40px;
+    font-weight: 900;
+    color: var(--death-red);
+    margin: 30px 0;
+    animation: revealPulse 2s infinite;
+}
+
+@keyframes revealPulse {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; text-shadow: 0 0 30px red; }
 }
 
 .items-grid {
@@ -406,7 +595,7 @@ section {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
     max-width: 1200px;
-    margin: 50px auto;
+    margin: 0 auto;
 }
 
 .death-card {
@@ -436,6 +625,16 @@ section {
     border-left: 2px solid var(--death-red);
 }
 
+.l-corner-item {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 30px;
+    font-weight: 900;
+    color: rgba(139, 0, 0, 0.2);
+}
+
 .death-card .item-icon i {
     font-size: 60px;
     color: var(--death-red);
@@ -444,8 +643,15 @@ section {
 
 .death-card h3 {
     font-size: 24px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     color: #fff;
+}
+
+.tool-description {
+    color: #ccc;
+    font-size: 16px;
+    margin-bottom: 15px;
+    font-style: italic;
 }
 
 .item-meta {
@@ -484,46 +690,6 @@ section {
     color: #000;
 }
 
-.how-to-buy-death {
-    margin-top: 60px;
-    text-align: center;
-}
-
-.how-to-buy-death h3 {
-    font-size: 28px;
-    color: var(--death-red);
-    margin-bottom: 30px;
-}
-
-.steps-death {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-    max-width: 900px;
-    margin: 30px auto;
-}
-
-.step-death {
-    text-align: center;
-    padding: 20px;
-    background: rgba(0, 0, 0, 0.5);
-    border: 1px solid #330000;
-    position: relative;
-}
-
-.step-number {
-    width: 40px;
-    height: 40px;
-    background: var(--death-red);
-    color: #fff;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 10px;
-    font-weight: bold;
-}
-
 .contact-section {
     position: relative;
 }
@@ -538,10 +704,15 @@ section {
     text-align: center;
 }
 
-.shinigami-avatar {
+.l-card {
+    position: relative;
+    border-color: #fff;
+}
+
+.l-avatar {
     width: 120px;
     height: 120px;
-    background: #1a1a1a;
+    background: #fff;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -549,7 +720,16 @@ section {
     margin: 0 auto 20px;
     border: 3px solid var(--death-red);
     font-size: 60px;
-    color: var(--death-red);
+    font-weight: 900;
+    font-family: 'Orbitron', sans-serif;
+    color: #000;
+}
+
+.l-quote-card {
+    font-family: 'Orbitron', sans-serif;
+    color: #fff;
+    margin: 20px 0;
+    font-size: 14px;
 }
 
 .shinigami-contact-btn {
@@ -566,10 +746,15 @@ section {
     transition: all 0.3s;
 }
 
-.shinigami-contact-btn:hover {
-    background: linear-gradient(45deg, var(--death-red), #000);
-    box-shadow: 0 0 30px var(--death-red);
-    transform: scale(1.05);
+.l-button {
+    background: linear-gradient(45deg, #000, #fff);
+    color: #000;
+    border: 1px solid #fff;
+}
+
+.l-button:hover {
+    background: linear-gradient(45deg, #fff, #000);
+    color: #fff;
 }
 
 .contact-note {
@@ -585,17 +770,16 @@ section {
     border: 1px solid #333;
 }
 
-.apple-container {
+.l-footprint {
     text-align: center;
     margin: 40px 0;
-    color: var(--death-red);
-    font-size: 40px;
-    animation: appleFloat 3s infinite;
+    font-size: 30px;
 }
 
-@keyframes appleFloat {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
+.l-footprint span {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--death-red);
+    margin: 0 15px;
 }
 
 footer {
@@ -610,9 +794,10 @@ footer {
     margin: 5px 0;
 }
 
-.death-note-footer .small-text {
-    font-size: 14px;
-    color: #333;
+.l-small {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 12px;
+    color: #444;
 }
 
 @media (max-width: 768px) {
@@ -639,4 +824,8 @@ footer {
     .hero-buttons {
         flex-direction: column;
     }
-}
+    
+    .l-left, .l-right {
+        font-size: 60px;
+    }
+    }
