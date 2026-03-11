@@ -1,3 +1,4 @@
+// قائمة الجوال
 document.querySelector('.menu-btn').addEventListener('click', function() {
     const navLinks = document.querySelector('.nav-links');
     if (navLinks.style.display === 'flex') {
@@ -11,26 +12,11 @@ document.querySelector('.menu-btn').addEventListener('click', function() {
         navLinks.style.background = '#000';
         navLinks.style.width = '200px';
         navLinks.style.padding = '20px';
-        navLinks.style.border = '2px solid #8b0000';
+        navLinks.style.border = '2px solid #ff0000';
     }
 });
 
-function checkCode() {
-    const code = document.getElementById('access-code').value;
-    const correctCode = 'Ghost-THE-L-Best';
-    
-    if (code === correctCode) {
-        document.getElementById('login-section').style.display = 'none';
-        document.getElementById('paid-content').style.display = 'block';
-        
-        // تأثير دخول L
-        const reveal = document.querySelector('.l-reveal');
-        reveal.style.animation = 'revealPulse 1s';
-    } else {
-        alert('❌ كود خطأ! الكود موجود في قناة @m50cl للأعضاء المدفوعين');
-    }
-}
-
+// فتح التيليجرام
 function openTelegram(event) {
     event.preventDefault();
     
@@ -39,10 +25,56 @@ function openTelegram(event) {
     window.location.href = telegramLink;
     
     setTimeout(function() {
-        window.open('https://t.me/m50cl', '_blank');
+        window.open('https://t.me/Ghost', '_blank');
     }, 500);
 }
 
+// نظام حماية عالي (Anti-hacking)
+(function() {
+    // منع حفظ الصفحة
+    document.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+        return false;
+    });
+    
+    // منع اختصار Ctrl+S (حفظ)
+    document.addEventListener('keydown', function(e) {
+        if (e.ctrlKey && (e.key === 's' || e.key === 'S')) {
+            e.preventDefault();
+            return false;
+        }
+        
+        // منع F12 و Ctrl+Shift+I (أدوات المطور)
+        if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I')) {
+            e.preventDefault();
+            return false;
+        }
+        
+        // منع Ctrl+U (عرض المصدر)
+        if (e.ctrlKey && e.key === 'u') {
+            e.preventDefault();
+            return false;
+        }
+    });
+    
+    // كشف أدوات المطور
+    setInterval(function() {
+        const start = performance.now();
+        debugger; // هذا يبطئ أدوات المطور
+        const end = performance.now();
+        
+        if (end - start > 100) {
+            // إذا كان هناك تأخير، يعني أدوات المطور مفتوحة
+            document.body.innerHTML = '<h1 style="color:red;text-align:center;margin-top:50px;">🚫 أدوات المطور ممنوعة!</h1>';
+        }
+    }, 1000);
+    
+    // إخفاء الكود المصدري
+    console.log('%c⚠️  محمي بواسطة Ghost', 'color: red; font-size: 20px; font-weight: bold;');
+    console.log('%c🔒 لا يمكنك رؤية الكود', 'color: white; font-size: 16px;');
+})();
+
+// التنقل النشط
 window.addEventListener('scroll', function() {
     const sections = document.querySelectorAll('section');
     const navLinks = document.querySelectorAll('.nav-links a');
@@ -63,23 +95,15 @@ window.addEventListener('scroll', function() {
     });
 });
 
+// تأثيرات عند التحميل
 window.addEventListener('load', function() {
-    const title = document.querySelector('.hero-content h1');
-    if (title) {
-        title.style.opacity = '0';
-        setTimeout(() => {
-            title.style.transition = 'opacity 2s';
-            title.style.opacity = '1';
-        }, 500);
-    }
+    console.log('👻 Death Note | Ghost');
     
-    // تأثير L عند التحميل
-    const lElements = document.querySelectorAll('.l-left, .l-right');
-    lElements.forEach(el => {
-        el.style.opacity = '0';
-        setTimeout(() => {
-            el.style.transition = 'opacity 3s';
-            el.style.opacity = '0.1';
-        }, 1000);
-    });
+    // تحقق من الجهاز
+    const deviceId = localStorage.getItem('ghost_device_id');
+    if (!deviceId) {
+        // إنشاء معرف فريد للجهاز
+        const newDeviceId = 'DEV-' + Math.random().toString(36).substr(2, 9);
+        localStorage.setItem('ghost_device_id', newDeviceId);
+    }
 });
