@@ -12,7 +12,51 @@ document.querySelector('.menu-btn').addEventListener('click', function() {
         navLinks.style.background = '#000';
         navLinks.style.width = '200px';
         navLinks.style.padding = '20px';
-        navLinks.style.border = '2px solid #ff0000';
+        navLinks.style.border = '1px solid #333';
+    }
+});
+
+// التحقق من الكود
+function checkCode() {
+    const code = document.getElementById('access-code').value;
+    
+    // هنا تحط الأكواد اللي تريدها (تعدلها براحتك)
+    const validCodes = [
+        'GHOST-001-DEATH',
+        'GHOST-002-NOTE',
+        'GHOST-003-LIGHT',
+        'GHOST-004-KIRA',
+        'GHOST-005-LAW',
+        'ADMIN-KEY-2009',
+        'SPECIAL-ACCESS',
+        'GHOST009967,
+        'videill',
+        'DEAT9-NOTE-10'
+    ];
+    
+    if (validCodes.includes(code)) {
+        // كود صحيح
+        document.getElementById('code-entry').style.display = 'none';
+        document.getElementById('paid-files').style.display = 'block';
+        
+        // حفظ في localStorage عشان ما يحتاج كل مرة
+        localStorage.setItem('deathnote_access', code);
+        
+        // رسالة نجاح
+        alert('✅ كود صحيح! مرحباً بك في القسم المدفوع');
+    } else {
+        // كود خطأ
+        alert('❌ كود خطأ! إذا ما عندك كود، راسلني عالتيليجرام');
+    }
+}
+
+// التحقق عند تحميل الصفحة (إذا كان مسجل دخول مسبقاً)
+window.addEventListener('load', function() {
+    const savedCode = localStorage.getItem('deathnote_access');
+    if (savedCode) {
+        // التحقق من الكود المخزن (اختياري)
+        document.getElementById('code-entry').style.display = 'none';
+        document.getElementById('paid-files').style.display = 'block';
     }
 });
 
@@ -25,54 +69,21 @@ function openTelegram(event) {
     window.location.href = telegramLink;
     
     setTimeout(function() {
-        window.open('https://t.me/Ghost', '_blank');
+        window.open('https://t.me/m50cl', '_blank');
     }, 500);
 }
 
-// نظام حماية عالي (Anti-hacking)
-(function() {
-    // منع حفظ الصفحة
-    document.addEventListener('contextmenu', function(e) {
+// منع النسخ
+document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+});
+
+// منع F12
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I')) {
         e.preventDefault();
-        return false;
-    });
-    
-    // منع اختصار Ctrl+S (حفظ)
-    document.addEventListener('keydown', function(e) {
-        if (e.ctrlKey && (e.key === 's' || e.key === 'S')) {
-            e.preventDefault();
-            return false;
-        }
-        
-        // منع F12 و Ctrl+Shift+I (أدوات المطور)
-        if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I')) {
-            e.preventDefault();
-            return false;
-        }
-        
-        // منع Ctrl+U (عرض المصدر)
-        if (e.ctrlKey && e.key === 'u') {
-            e.preventDefault();
-            return false;
-        }
-    });
-    
-    // كشف أدوات المطور
-    setInterval(function() {
-        const start = performance.now();
-        debugger; // هذا يبطئ أدوات المطور
-        const end = performance.now();
-        
-        if (end - start > 100) {
-            // إذا كان هناك تأخير، يعني أدوات المطور مفتوحة
-            document.body.innerHTML = '<h1 style="color:red;text-align:center;margin-top:50px;">🚫 أدوات المطور ممنوعة!</h1>';
-        }
-    }, 1000);
-    
-    // إخفاء الكود المصدري
-    console.log('%c⚠️  محمي بواسطة Ghost', 'color: red; font-size: 20px; font-weight: bold;');
-    console.log('%c🔒 لا يمكنك رؤية الكود', 'color: white; font-size: 16px;');
-})();
+    }
+});
 
 // التنقل النشط
 window.addEventListener('scroll', function() {
@@ -95,15 +106,7 @@ window.addEventListener('scroll', function() {
     });
 });
 
-// تأثيرات عند التحميل
+// تأثيرات التحميل
 window.addEventListener('load', function() {
     console.log('👻 Death Note | Ghost');
-    
-    // تحقق من الجهاز
-    const deviceId = localStorage.getItem('ghost_device_id');
-    if (!deviceId) {
-        // إنشاء معرف فريد للجهاز
-        const newDeviceId = 'DEV-' + Math.random().toString(36).substr(2, 9);
-        localStorage.setItem('ghost_device_id', newDeviceId);
-    }
 });
