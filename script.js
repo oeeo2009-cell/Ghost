@@ -15,6 +15,22 @@ document.querySelector('.menu-btn').addEventListener('click', function() {
     }
 });
 
+function checkCode() {
+    const code = document.getElementById('access-code').value;
+    const correctCode = 'Ghost-THE-L-Best';
+    
+    if (code === correctCode) {
+        document.getElementById('login-section').style.display = 'none';
+        document.getElementById('paid-content').style.display = 'block';
+        
+        // تأثير دخول L
+        const reveal = document.querySelector('.l-reveal');
+        reveal.style.animation = 'revealPulse 1s';
+    } else {
+        alert('❌ كود خطأ! الكود موجود في قناة @m50cl للأعضاء المدفوعين');
+    }
+}
+
 function openTelegram(event) {
     event.preventDefault();
     
@@ -56,4 +72,14 @@ window.addEventListener('load', function() {
             title.style.opacity = '1';
         }, 500);
     }
+    
+    // تأثير L عند التحميل
+    const lElements = document.querySelectorAll('.l-left, .l-right');
+    lElements.forEach(el => {
+        el.style.opacity = '0';
+        setTimeout(() => {
+            el.style.transition = 'opacity 3s';
+            el.style.opacity = '0.1';
+        }, 1000);
+    });
 });
