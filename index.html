@@ -9,15 +9,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- شخصيات ثابتة -->
-    <div class="character-l">L</div>
-    <div class="character-kira">KIRA</div>
+    <!-- عناصر متحركة في الخلفية -->
+    <div class="floating-l">L</div>
+    <div class="floating-kira">KIRA</div>
+    <div class="floating-skull">☠</div>
+    <div class="floating-apple">🍎</div>
+    <div class="floating-note">DEATH NOTE</div>
 
-    <!-- شريط القناة -->
+    <!-- شريط القناة المجانية -->
     <div class="telegram-bar">
         <i class="fab fa-telegram"></i>
-        <span>القناة المجانية: @Ghost</span>
-        <a href="https://t.me/Ghost" target="_blank" class="telegram-link">اشترك الآن</a>
+        <span>القناة المجانية: @m50cl</span>
+        <a href="https://t.me/m50cl" target="_blank" class="telegram-link">اشترك الآن</a>
     </div>
 
     <!-- القائمة العلوية -->
@@ -29,8 +32,8 @@
         <ul class="nav-links">
             <li><a href="#home" class="active">الرئيسية</a></li>
             <li><a href="#free">المجانية</a></li>
-            <li><a href="#paid">الـ 10 مفاتيح</a></li>
-            <li><a href="#contact">اتصل بـ Ghost</a></li>
+            <li><a href="#paid">المدفوع</a></li>
+            <li><a href="#contact">اتصل بي</a></li>
         </ul>
         <div class="menu-btn">
             <i class="fas fa-bars"></i>
@@ -40,102 +43,168 @@
     <!-- الصفحة الرئيسية -->
     <section id="home" class="hero">
         <div class="hero-content">
-            <div class="duo-characters">
-                <span class="l-char">L</span>
-                <span class="vs">VS</span>
-                <span class="kira-char">KIRA</span>
+            <div class="animated-title">
+                <span class="l-letter">L</span>
+                <span class="vs">vs</span>
+                <span class="kira-letter">KIRA</span>
             </div>
             <h1>مُذَكِّرَة <span>الموت</span></h1>
             <p class="ghost-quote">"أنا Ghost، صانع المفاتيح"</p>
-            <div class="divider">
+            <div class="animated-divider">
                 <i class="fas fa-apple-alt"></i>
                 <i class="fas fa-skull"></i>
                 <i class="fas fa-apple-alt"></i>
             </div>
             <div class="hero-buttons">
-                <a href="#free" class="btn btn-outline">المجانية</a>
-                <a href="#paid" class="btn btn-primary">الـ 10 مفاتيح</a>
+                <a href="#free" class="btn btn-outline">الأدوات المجانية</a>
+                <a href="#paid" class="btn btn-primary">الأداة المدفوعة</a>
             </div>
         </div>
     </section>
 
     <!-- القسم المجاني -->
     <section id="free" class="free-section">
-        <h2 class="section-title"><span class="red-text">●</span> القناة المجانية <span class="red-text">●</span></h2>
+        <h2 class="section-title"><span class="white-text">◈</span> القناة المجانية <span class="white-text">◈</span></h2>
         <p class="section-desc">كل الأدوات المجانية في قناة التيليجرام</p>
         
         <div class="channel-card">
-            <div class="char-mini">L</div>
-            <div class="char-mini-right">KIRA</div>
+            <div class="floating-mini-l">L</div>
+            <div class="floating-mini-kira">KIRA</div>
             <div class="channel-icon">
                 <i class="fab fa-telegram"></i>
             </div>
-            <h3>@Ghost</h3>
+            <h3>@m50cl</h3>
             <p>القناة الرسمية للأدوات المجانية</p>
             <div class="channel-features">
                 <span><i class="fas fa-check"></i> تحديث يومي</span>
                 <span><i class="fas fa-check"></i> أدوات بايثون</span>
                 <span><i class="fas fa-check"></i> تطبيقات</span>
             </div>
-            <a href="https://t.me/Ghost" target="_blank" class="channel-btn">
+            <a href="https://t.me/m50cl" target="_blank" class="channel-btn">
                 <i class="fab fa-telegram"></i> افتح القناة
             </a>
         </div>
     </section>
 
-    <!-- قسم الـ 10 مفاتيح -->
+    <!-- القسم المدفوع -->
     <section id="paid" class="paid-section">
-        <h2 class="section-title"><span class="red-text">⚡</span> الـ 10 مفاتيح <span class="red-text">⚡</span></h2>
-        <p class="section-desc">كل مفتاح يشغل على جهاز واحد فقط</p>
-
-        <div class="keys-showcase">
-            <div class="key-card">
-                <div class="key-header">
-                    <span class="l-icon">L</span>
-                    <span class="kira-icon">K</span>
+        <h2 class="section-title"><span class="white-text">⚡</span> المحتوى المدفوع <span class="white-text">⚡</span></h2>
+        
+        <!-- نافذة إدخال الكود -->
+        <div id="code-entry" class="code-container">
+            <div class="code-box">
+                <div class="lock-icon">
+                    <i class="fas fa-lock"></i>
                 </div>
-                <div class="key-price">$10</div>
-                <div class="key-description">
-                    <i class="fas fa-shield-alt"></i> مفتاح لجهاز واحد
-                </div>
-                <a href="#" onclick="openTelegram(event)" class="key-buy-btn">
-                    <i class="fab fa-telegram"></i> راسل Ghost
-                </a>
+                <h3>🔐 أدخل كود الدخول</h3>
+                <p>إذا اشتريت الأداة، راح تستلم كود مني</p>
+                <input type="text" id="access-code" class="code-input" placeholder="مثال: GHOST-XXX-000" autocomplete="off">
+                <button onclick="checkCode()" class="code-btn">دخول</button>
+                <p class="code-note">ما عندك كود؟ <a href="#" onclick="openTelegram(event)" class="buy-link">راسلني عالتيليجرام</a></p>
             </div>
-            <div class="keys-note">
-                <i class="fas fa-info-circle"></i> بعد الشراء، تستلم مفتاح عشوائي من الـ 10 مفاتيح
+        </div>
+
+        <!-- الملفات المدفوعة (مخفية لحد ما يدخل الكود) -->
+        <div id="paid-files" class="files-container" style="display: none;">
+            <div class="files-header">
+                <span class="l-files">L</span>
+                <h3>ملفات الأداة المدفوعة</h3>
+                <span class="kira-files">KIRA</span>
+            </div>
+            
+            <div class="files-grid">
+                <!-- ملف 1 -->
+                <div class="file-card">
+                    <div class="file-icon">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <div class="file-info">
+                        <h4>أداة صيد متاحات انستا</h4>
+                        <p>الملف الرئيسي - نسخة غير مشفرة</p>
+                        <div class="file-meta">
+                            <span><i class="fas fa-code"></i> Python</span>
+                            <span><i class="fas fa-calendar"></i> 2025</span>
+                            <span><i class="fas fa-crown"></i> مدفوع</span>
+                        </div>
+                    </div>
+                    <a href="files/insta_hunter.py" download class="download-btn">
+                        <i class="fas fa-download"></i> تحميل
+                    </a>
+                </div>
+
+                <!-- ملف 2 -->
+                <div class="file-card">
+                    <div class="file-icon">
+                        <i class="fas fa-file-archive"></i>
+                    </div>
+                    <div class="file-info">
+                        <h4>مكتبات إضافية</h4>
+                        <p>الملفات المساعدة للتشغيل</p>
+                        <div class="file-meta">
+                            <span><i class="fas fa-archive"></i> ZIP</span>
+                            <span><i class="fas fa-database"></i> 2.5 MB</span>
+                        </div>
+                    </div>
+                    <a href="files/libraries.zip" download class="download-btn">
+                        <i class="fas fa-download"></i> تحميل
+                    </a>
+                </div>
+
+                <!-- ملف 3 -->
+                <div class="file-card">
+                    <div class="file-icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <div class="file-info">
+                        <h4>دليل الاستخدام</h4>
+                        <p>شرح كامل لتشغيل الأداة</p>
+                        <div class="file-meta">
+                            <span><i class="fas fa-file-pdf"></i> PDF</span>
+                            <span><i class="fas fa-book"></i> 10 صفحات</span>
+                        </div>
+                    </div>
+                    <a href="files/guide.pdf" download class="download-btn">
+                        <i class="fas fa-download"></i> تحميل
+                    </a>
+                </div>
+            </div>
+
+            <div class="files-footer">
+                <p>⚠️ هذه الملفات خاصة بك فقط. لا تشاركها مع أي شخص.</p>
             </div>
         </div>
     </section>
 
-    <!-- اتصل بـ Ghost -->
+    <!-- اتصل بي -->
     <section id="contact" class="contact-section">
-        <h2 class="section-title"><span class="red-text">〆</span> اتصل بـ Ghost <span class="red-text">〆</span></h2>
+        <h2 class="section-title"><span class="white-text">〆</span> اتصل بي <span class="white-text">〆</span></h2>
         
-        <div class="ghost-card">
-            <div class="ghost-avatar">GHOST</div>
-            <h3>صانع المفاتيح</h3>
-            <p class="ghost-quote-card">"10 مفاتيح، 10 أقدار"</p>
+        <div class="contact-card">
+            <div class="contact-avatar">
+                <i class="fas fa-ghost"></i>
+            </div>
+            <h3>Ghost</h3>
+            <p class="contact-quote">"للحصول على كود الدخول، راسلني"</p>
             
-            <a href="tg://openmessage?user_id=8303099506" class="ghost-contact-btn">
-                <i class="fab fa-telegram"></i> راسلني
+            <a href="tg://openmessage?user_id=8303099506" class="contact-btn">
+                <i class="fab fa-telegram"></i> راسلني مباشرة
             </a>
             
-            <div class="security-badge">
-                <i class="fas fa-lock"></i> حماية عالية من الاختراق
-                <i class="fas fa-shield-alt"></i>
+            <div class="contact-info">
+                <p><i class="fab fa-telegram"></i> قناتي: @m50cl</p>
+                <p><i class="fas fa-key"></i> بعد الشراء، استلم كود فريد</p>
             </div>
         </div>
     </section>
 
     <!-- الفوتر -->
     <footer>
-        <div class="death-note-footer">
-            <p>Death Note | Ghost</p>
-            <p class="small-text">"L vs Kira"</p>
+        <div class="footer-content">
+            <p>DEATH NOTE | Ghost</p>
+            <p class="small-text">"L vs KIRA"</p>
         </div>
     </footer>
 
     <script src="script.js"></script>
 </body>
-            </html>
+</html>
