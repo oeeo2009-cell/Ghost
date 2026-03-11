@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Death Note | m50cl</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- شريط القناة (مجاني) -->
+    <div class="telegram-bar">
+        <i class="fab fa-telegram"></i>
+        <span>القناة المجانية: @m50cl</span>
+        <a href="https://t.me/m50cl" target="_blank" class="telegram-link">اشترك الآن</a>
+    </div>
+
+    <!-- القائمة العلوية -->
+    <nav>
+        <div class="logo">
+            <h1>DEATH <span>NOTE</span></h1>
+            <p class="logo-sub">m50cl</p>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home" class="active">الرئيسية</a></li>
+            <li><a href="#free">الأدوات المجانية</a></li>
+            <li><a href="#paid">الأدوات المدفوعة</a></li>
+            <li><a href="#contact">اتصل بالشينيغامي</a></li>
+        </ul>
+        <div class="menu-btn">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <!-- الصفحة الرئيسية -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>مُذَكِّرَة <span>الموت</span></h1>
+            <p>"أنا الذي يكتب الأسماء في المذكرة، وأقرر مصير الأدوات"</p>
+            <div class="apple-divider">
+                <i class="fas fa-apple-alt"></i>
+                <i class="fas fa-apple-alt"></i>
+                <i class="fas fa-apple-alt"></i>
+            </div>
+            <div class="hero-buttons">
+                <a href="#free" class="btn btn-outline">الأدوات المجانية</a>
+                <a href="#paid" class="btn btn-primary">الأدوات المدفوعة</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- القسم المجاني -->
+    <section id="free" class="free-section">
+        <h2 class="section-title"><span class="red-text">●</span> الأدوات المجانية <span class="red-text">●</span></h2>
+        <p class="section-desc">كل أدواتك المجانية موجودة في قناتنا على تيليجرام</p>
+        
+        <div class="channel-card">
+            <div class="channel-icon">
+                <i class="fab fa-telegram"></i>
+            </div>
+            <h3>@m50cl</h3>
+            <p>القناة الرسمية للأدوات المجانية</p>
+            <div class="channel-features">
+                <span><i class="fas fa-check"></i> تحديث يومي</span>
+                <span><i class="fas fa-check"></i> أدوات بايثون</span>
+                <span><i class="fas fa-check"></i> تطبيقات</span>
+                <span><i class="fas fa-check"></i> سكريبتات</span>
+            </div>
+            <a href="https://t.me/m50cl" target="_blank" class="channel-btn">
+                <i class="fab fa-telegram"></i> افتح القناة المجانية
+            </a>
+            <p class="channel-note">* كل الأدوات المجانية منشورة هناك، ادخل وحمل مباشرة</p>
+        </div>
+        <div class="death-note-decoration">
+            <i class="fas fa-apple-alt"></i>
+        </div>
+    </section>
+
+    <!-- القسم المدفوع -->
+    <section id="paid" class="paid-section">
+        <h2 class="section-title"><span class="red-text">☠</span> الأدوات المدفوعة <span class="red-text">☠</span></h2>
+        <p class="section-desc">"اكتب اسمك في المذكرة... وتحصل على أقوى الأدوات"</p>
+
+        <div class="death-note-quote">
+            "أنا الشينيغامي الوحيد الذي يسقط التفاح في عالم البشر"
+        </div>
+
+        <div class="items-grid">
+            <!-- أداة مدفوعة 1 -->
+            <div class="item-card death-card">
+                <div class="death-corner"></div>
+                <div class="item-icon">
+                    <i class="fas fa-skull"></i>
+                </div>
+                <h3>أداة رايوك</h3>
+                <p>أداة متقدمة لاختراق الأنظمة، سر من أسرار الشينيغامي</p>
+                <div class="item-meta">
+                    <span><i class="fas fa-apple-alt"></i> 1 تفاحة</span>
+                    <span><i class="fas fa-hourglass"></i> 30 يوم</span>
+                </div>
+                <div class="price-tag-death">$50</div>
+                <a href="#" onclick="openTelegram(event)" class="death-contact-btn">
+                    <i class="fab fa-telegram"></i> راسل الشينيغامي
+                </a>
+            </div>
+
+            <!-- أداة مدفوعة 2 -->
+            <div class="item-card death-card">
+                <div class="death-corner"></div>
+                <div class="item-icon">
+                    <i class="fas fa-eye"></i>
+                </div>
+                <h3>عيون L</h3>
+                <p>أداة تتبع وجمع معلومات، ترى ما لا يراه الآخرون</p>
+                <div class="item-meta">
+                    <span><i class="fas fa-apple-alt"></i> 2 تفاحة</span>
+                    <span><i class="fas fa-hourglass"></i> 45 يوم</span>
+                </div>
+                <div class="price-tag-death">$75</div>
+                <a href="#" onclick="openTelegram(event)" class="death-contact-btn">
+                    <i class="fab fa-telegram"></i> راسل الشينيغامي
+                </a>
+            </div>
+
+            <!-- أداة مدفوعة 3 -->
+            <div class="item-card death-card">
+                <div class="death-corner"></div>
+                <div class="item-icon">
+                    <i class="fas fa-crown"></i>
+                </div>
+                <h3>مذكرة كيرا</h3>
+                <p>حزمة الأدوات الكاملة، كأنك مالك العالم</p>
+                <div class="item-meta">
+                    <span><i class="fas fa-apple-alt"></i> 5 تفاحات</span>
+                    <span><i class="fas fa-infinity"></i> دائم</span>
+                </div>
+                <div class="price-tag-death">$200</div>
+                <a href="#" onclick="openTelegram(event)" class="death-contact-btn">
+                    <i class="fab fa-telegram"></i> راسل الشينيغامي
+                </a>
+            </div>
+        </div>
+
+        <!-- طريقة الشرح -->
+        <div class="how-to-buy-death">
+            <h3>✍️ كيف تكتب اسمك في المذكرة؟</h3>
+            <div class="steps-death">
+                <div class="step-death">
+                    <div class="step-number">1</div>
+                    <p>شوف الأداة اللي تبيها</p>
+                </div>
+                <div class="step-death">
+                    <div class="step-number">2</div>
+                    <p>اضغط على "راسل الشينيغامي"</p>
+                </div>
+                <div class="step-death">
+                    <div class="step-number">3</div>
+                    <p>اكتب اسم الأداة في المحادثة</p>
+                </div>
+                <div class="step-death">
+                    <div class="step-number">4</div>
+                    <p>انتظر رد الشينيغامي (أنا)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- اتصل بي -->
+    <section id="contact" class="contact-section">
+        <h2 class="section-title"><span class="red-text">〆</span> اتصل بالشينيغامي <span class="red-text">〆</span></h2>
+        
+        <div class="shinigami-card">
+            <div class="shinigami-avatar">
+                <i class="fas fa-ghost"></i>
+            </div>
+            <h3>الشينيغامي m50cl</h3>
+            <p>"أنا آكل التفاح وأعطي الأدوات لمن يستحق"</p>
+            
+            <a href="tg://openmessage?user_id=8303099506" class="shinigami-contact-btn">
+                <i class="fab fa-telegram"></i> راسلني مباشرة
+            </a>
+            <p class="contact-note">اضغط على الزر، وبتفتح معي محادثة في تيليجرام</p>
+            
+            <div class="fallback-contact">
+                <small>إذا ما فتح معك الرابط، افتح تيليجرام وابحث عن: <strong>@m50cl</strong></small>
+            </div>
+        </div>
+
+        <div class="apple-container">
+            <i class="fas fa-apple-alt"></i>
+        </div>
+    </section>
+
+    <!-- الفوتر -->
+    <footer>
+        <div class="death-note-footer">
+            <p>مُذَكِّرَة الـ Death Note | جميع الحقوق محفوظة للشينيغامي</p>
+            <p class="small-text">"هذا العالم ضيق للغاية" - رايوك</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
